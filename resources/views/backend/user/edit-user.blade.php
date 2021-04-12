@@ -37,7 +37,7 @@
                     <!-- Custom tabs (Charts with tabs)-->
                     <div class="card">
                         <div class="card-header">
-                            <h3>Add User
+                            <h3>Edit User
                                 <a class="btn btn-success float-right btn-sm" href="{{ route('users.view') }}">
                                     <i class="fa fa-list"></i>User list</a>
                             </h3>
@@ -46,7 +46,7 @@
                         <div class="card-body">
 
                         {{-- User add form --}}
-                        <form method="post" action="{{ route('users.store') }}" id="myForm">
+                        <form method="post" action="{{ route('users.update', $editData->id) }}" id="myForm">
                             @csrf
 
                             <div class="form-row">
@@ -54,14 +54,14 @@
                                     <label for="user_type">User Role</label>
                                         <select name="user_type" id="user_type" class="form-control">
                                             <option value="">Select Role</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="User">User</option>
+                                            <option value="Admin" {{ ($editData->user_type=="Admin")?"selected":"" }}>Admin</option>
+                                            <option value="User" {{ ($editData->user_type=="User")?"selected":"" }}>User</option>
                                         </select>
                                </div>  
 
                                 <div class="form-group col-md-4">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" value="{{ $editData->name }}" class="form-control">
                                     <font style="color:red">
                                         {{($errors->has('name'))?($errors->first('name')):''}}
                                     </font>
@@ -69,24 +69,14 @@
                     
                                 <div class="form-group col-md-4">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control">
+                                    <input type="email" name="email" value="{{ $editData->email }}" class="form-control">
                                     <font style="color:red">
                                         {{($errors->has('email'))?($errors->first('email')):''}}
                                     </font>
                                 </div>
 
-                                <div class="form-group col-md-4">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control">
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="password">Confirm Password</label>
-                                    <input type="password" name="password2" class="form-control">
-                                </div>
-
                                 <div class="form-group col-md-6">
-                                    <input type="submit" value="submit" class="btn btn-primary">
+                                    <input type="submit" value="Update" class="btn btn-primary">
                                 </div>
                             </div>    
                               

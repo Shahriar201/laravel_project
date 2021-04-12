@@ -65,7 +65,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <a title="Edit" class="btn btn-sm btn-primary" href="">
+                                            <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('users.edit', $user->id)}}">
                                                 <i class="fa fa-edit">
 
                                                 </i>
