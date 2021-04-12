@@ -38,7 +38,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>User List
-                                <a class="btn btn-success float-right btn-sm" herf="">
+                                <a class="btn btn-success float-right btn-sm" href="{{ route('users.add') }}">
                                     <i class="fa fa-plus-circle"></i>Add User</a>
                             </h3>
                         </div>

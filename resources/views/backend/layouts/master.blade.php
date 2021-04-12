@@ -32,6 +32,10 @@
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+
+    <!-- jQuery -->
+    <script src="{{asset ('backend/plugins/jquery/jquery.min.js')}}"></script>
+    
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -152,8 +156,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <!-- jQuery -->
-    <script src="{{asset ('backend/plugins/jquery/jquery.min.js')}}"></script>
+    
     <!-- jQuery UI 1.11.4 -->
     <script src="{{asset ('backend/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -202,6 +205,11 @@
     <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> --}}
 
 <!-- Page specific script -->
+
+<!-- jquery-validation -->
+<script src="{{ asset ('backend')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{{ asset ('backend')}}/plugins/jquery-validation/additional-methods.min.js"></script>
+
 <script>
     $(function () {
       $("#example1").DataTable();
