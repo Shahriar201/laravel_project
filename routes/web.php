@@ -34,3 +34,11 @@ Route::prefix('users')->group(function(){
     Route::get('/delete/{id}', 'Backend\UserController@delete')->name('users.delete');
     
 });
+
+Route::prefix('profiles')->group(function(){
+
+    Route::get('/view', 'Backend\ProfileController@view')->name('profiles.view');
+    Route::get('/edit', 'Backend\ProfileController@edit')->name('profiles.edit');
+    Route::post('/store', 'Backend\ProfileController@update')->name('profiles.update');
+    
+});
