@@ -35,6 +35,12 @@
 
     <!-- jQuery -->
     <script src="{{asset ('backend/plugins/jquery/jquery.min.js')}}"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+
+    {{-- sweet alert --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     
 </head>
 
@@ -110,36 +116,46 @@
         <!-- /.navbar -->
 
         
-<!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="" class="brand-link">
-        <img src="{{asset ('backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Dashboard</span>
-    </a>
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="" class="brand-link">
+            <img src="{{asset ('backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Dashboard</span>
+        </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="{{asset ('backend/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="{{asset ('backend/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">Shahriar</a>
+                </div>
             </div>
-            <div class="info">
-                <a href="#" class="d-block">Shahriar</a>
-            </div>
+
+            <!-- SidebarSearch Form -->
+
+            @include('backend.layouts.sidebar')
+
+            
         </div>
-
-        <!-- SidebarSearch Form -->
-
-        @include('backend.layouts.sidebar')
-
-        
-    </div>
-    <!-- /.sidebar -->
-</aside>
+        <!-- /.sidebar -->
+    </aside>
 
         @yield('content')
+
+        {{-- Javascript updated notification alert --}}
+        @if (session()->has('success'))
+            <script type="text/javascript">
+                $(function(){
+                    $.notify("{{ session()->get('success') }}", {globalPosition:'top right', className:'success'});
+                });
+            </script>
+            
+        @endif
         
         <footer class="main-footer">
             <strong>Copyright &copy; 2020-2021 <a href="https://adminlte.io"></a>.</strong> All rights reserved.
@@ -204,26 +220,55 @@
     <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> --}}
 
-<!-- Page specific script -->
+    <!-- Page specific script -->
 
-<!-- jquery-validation -->
-<script src="{{ asset ('backend')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
-<script src="{{ asset ('backend')}}/plugins/jquery-validation/additional-methods.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="{{ asset ('backend')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{ asset ('backend')}}/plugins/jquery-validation/additional-methods.min.js"></script>
 
-<script>
-    $(function () {
-      $("#example1").DataTable();
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
+    <script>
+        $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            $(document).on('click', '#delete', function(e){
+                e.preventDefault();
+                var link = $(this).attr("href");
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Delete this data",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = link;
+                        Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        )
+                    }
+                    })
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>

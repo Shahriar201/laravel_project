@@ -31,6 +31,6 @@ Route::prefix('users')->group(function(){
     
     Route::get('/edit/{id}', 'Backend\UserController@edit')->name('users.edit');
     Route::post('/update/{id}', 'Backend\UserController@update')->name('users.update');
-    Route::get('/delete/{id}', 'Backend\UserController@update')->name('users.delete');
+    Route::get('/delete/{id}', 'Backend\UserController@delete')->name('users.delete');
     
 });
