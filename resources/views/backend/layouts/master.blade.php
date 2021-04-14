@@ -80,11 +80,11 @@
                                 <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                     <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
+                                        <i class="fas fa-times"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -119,7 +119,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="" class="brand-link">
+        <a href="{{ route('home') }}" class="brand-link">
             <img src="{{asset ('backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Dashboard</span>
         </a>
@@ -129,10 +129,10 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{asset ('backend/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ (!empty(Auth::user()->image))?url('upload/user_images/'.Auth::user()->image):url('upload/no_image.jpg') }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Shahriar</a>
+                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                 </div>
             </div>
 
@@ -152,6 +152,16 @@
             <script type="text/javascript">
                 $(function(){
                     $.notify("{{ session()->get('success') }}", {globalPosition:'top right', className:'success'});
+                });
+            </script>
+            
+        @endif
+
+        {{-- Javascript error notification alert --}}
+        @if (session()->has('error'))
+            <script type="text/javascript">
+                $(function(){
+                    $.notify("{{ session()->get('error') }}", {globalPosition:'top right', className:'error'});
                 });
             </script>
             
