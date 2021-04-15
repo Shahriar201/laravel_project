@@ -33,7 +33,7 @@ class UserController extends Controller
         $data->user_type = $request->user_type;
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->password = bcrypt($request->email);
+        $data->password = bcrypt($request->password);
         $data->save();
 
         return redirect()->route('users.view')->with('success', 'Data inserted successfully');
