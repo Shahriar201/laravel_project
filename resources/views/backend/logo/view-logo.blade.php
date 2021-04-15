@@ -38,8 +38,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Logo List
+
+                                @if($countLogo<1)
                                 <a class="btn btn-success float-right btn-sm" href="{{ route('logos.add') }}">
                                     <i class="fa fa-plus-circle"></i>Add Logo</a>
+                                @endif
+                                
                             </h3>
                         </div>
                         <!-- /.card-header -->
