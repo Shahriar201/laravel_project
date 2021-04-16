@@ -80,3 +80,15 @@ Route::prefix('missions')->group(function(){
     Route::get('/delete/{id}', 'Backend\MissionController@delete')->name('missions.delete');
     
 });
+
+Route::prefix('visions')->group(function(){
+
+    Route::get('/view', 'Backend\VisionController@view')->name('visions.view');
+    Route::get('/add', 'Backend\VisionController@add')->name('visions.add');
+    Route::post('/store', 'Backend\VisionController@store')->name('visions.store');
+    
+    Route::get('/edit/{id}', 'Backend\VisionController@edit')->name('visions.edit');
+    Route::post('/update/{id}', 'Backend\VisionController@update')->name('visions.update');
+    Route::get('/delete/{id}', 'Backend\VisionController@delete')->name('visions.delete');
+    
+});

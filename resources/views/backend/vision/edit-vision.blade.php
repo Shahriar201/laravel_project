@@ -9,13 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Manage Mission</h1>
+                    <h1 class="m-0">Manage Vision</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Mission</li>
+                        <li class="breadcrumb-item active">Vision</li>
                     </ol>
                 </div>
                 <!-- /.col -->
@@ -37,9 +37,9 @@
                     <!-- Custom tabs (Charts with tabs)-->
                     <div class="card">
                         <div class="card-header">
-                            <h3>Edit Mission
-                                <a class="btn btn-success float-right btn-sm" href="{{ route('missions.view') }}">
-                                    <i class="fa fa-list"></i>Mission List</a>
+                            <h3>Edit Vision
+                                <a class="btn btn-success float-right btn-sm" href="{{ route('visions.view') }}">
+                                    <i class="fa fa-list"></i>Vision List</a>
                             </h3>
                         </div>
 
@@ -47,7 +47,7 @@
                         <div class="card-body">
 
                         {{-- User add form --}}
-                        <form method="post" action="{{ route('missions.update', $editData->id) }}" id="myForm" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('visions.update', $editData->id) }}" id="myForm" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-row">
@@ -63,7 +63,7 @@
                                 </div>
 
                                <div class="form-group col-md-2">
-                                    <img id="showImage" src="{{ (!empty($editData->image))?url('upload/mission_images/'.$editData->image):url('upload/no_image.jpg') }}"
+                                    <img id="showImage" src="{{ (!empty($editData->image))?url('upload/vision_images/'.$editData->image):url('upload/no_image.jpg') }}"
                                      style="width: 150px; height: 160px; border: 1px solid #000;">
                                 </div>
 

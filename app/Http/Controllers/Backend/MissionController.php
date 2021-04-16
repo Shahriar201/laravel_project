@@ -37,7 +37,7 @@ class MissionController extends Controller
         }
         $data->save();
 
-        return redirect()->route('missions.view')->with('success', 'Slider inserted successfully');
+        return redirect()->route('missions.view')->with('success', 'Mission inserted successfully');
     }
 
     public function edit($id){
