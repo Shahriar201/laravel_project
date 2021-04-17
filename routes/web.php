@@ -92,3 +92,15 @@ Route::prefix('visions')->group(function(){
     Route::get('/delete/{id}', 'Backend\VisionController@delete')->name('visions.delete');
     
 });
+
+Route::prefix('news_events')->group(function(){
+
+    Route::get('/view', 'Backend\NewsEventController@view')->name('news_events.view');
+    Route::get('/add', 'Backend\NewsEventController@add')->name('news_events.add');
+    Route::post('/store', 'Backend\NewsEventController@store')->name('news_events.store');
+    
+    Route::get('/edit/{id}', 'Backend\NewsEventController@edit')->name('news_events.edit');
+    Route::post('/update/{id}', 'Backend\NewsEventController@update')->name('news_events.update');
+    Route::get('/delete/{id}', 'Backend\NewsEventController@delete')->name('news_events.delete');
+    
+});

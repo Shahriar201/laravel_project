@@ -127,6 +127,25 @@
             </ul>
         </li>
 
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage News_events
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('news_events.view') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View News_events</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+
     </ul>
 </nav>
 <!-- /.sidebar-menu -->
