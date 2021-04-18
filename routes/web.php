@@ -116,3 +116,15 @@ Route::prefix('services')->group(function(){
     Route::get('/delete/{id}', 'Backend\ServiceController@delete')->name('services.delete');
     
 });
+
+Route::prefix('contacts')->group(function(){
+
+    Route::get('/view', 'Backend\ContactController@view')->name('contacts.view');
+    Route::get('/add', 'Backend\ContactController@add')->name('contacts.add');
+    Route::post('/store', 'Backend\ContactController@store')->name('contacts.store');
+    
+    Route::get('/edit/{id}', 'Backend\ContactController@edit')->name('contacts.edit');
+    Route::post('/update/{id}', 'Backend\ContactController@update')->name('contacts.update');
+    Route::get('/delete/{id}', 'Backend\ContactController@delete')->name('contacts.delete');
+    
+});
