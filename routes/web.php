@@ -128,3 +128,15 @@ Route::prefix('contacts')->group(function(){
     Route::get('/delete/{id}', 'Backend\ContactController@delete')->name('contacts.delete');
     
 });
+
+Route::prefix('abouts')->group(function(){
+
+    Route::get('/view', 'Backend\AboutController@view')->name('abouts.view');
+    Route::get('/add', 'Backend\AboutController@add')->name('abouts.add');
+    Route::post('/store', 'Backend\AboutController@store')->name('abouts.store');
+    
+    Route::get('/edit/{id}', 'Backend\AboutController@edit')->name('abouts.edit');
+    Route::post('/update/{id}', 'Backend\AboutController@update')->name('abouts.update');
+    Route::get('/delete/{id}', 'Backend\AboutController@delete')->name('abouts.delete');
+    
+});

@@ -9,7 +9,9 @@ use App\Model\Contact;
 
 class ContactController extends Controller
 {
-    public function view(){     
+    public function view(){    
+        $data['countContact'] = Contact::count();
+         
         $data['allData'] = Contact::all();
         
         return view('backend.contact.view-contact', $data);

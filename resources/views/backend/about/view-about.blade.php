@@ -9,13 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Manage Contact</h1>
+                    <h1 class="m-0">Manage About</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Contact</li>
+                        <li class="breadcrumb-item active">About</li>
                     </ol>
                 </div>
                 <!-- /.col -->
@@ -37,53 +37,45 @@
                     <!-- Custom tabs (Charts with tabs)-->
                     <div class="card">
                         <div class="card-header">
-                            <h3>Contact List
-                                
-                                @if($countContact<1)
-                                <a class="btn btn-success float-right btn-sm" href="{{ route('contacts.add') }}">
-                                    <i class="fa fa-plus-circle"></i>Add Contact</a>
-                                @endif
 
-                            </h3>
+                            @if($countAbout<1)
+                                <h3>About Us List
+                                    
+                                    {{-- @if($countContact<1) --}}
+                                    <a class="btn btn-success float-right btn-sm" href="{{ route('abouts.add') }}">
+                                        <i class="fa fa-plus-circle"></i>Add About Us</a>
+                                    {{-- @endif --}}
+
+                                </h3>
+                            @endif
+                            
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
 
-                            <table id="example1" class="table table-bordered table-hover table-responsive">
+                            <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>SL.</th>
-                                        <th>Address</th>
-                                        <th>Mobile No.</th>
-                                        <th>Email</th>
-                                        <th>Facebook</th>
-                                        <th>Twitter</th>
-                                        <th>Youtube</th>
-                                        <th>Google Plus</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    @foreach ($allData as $key => $contact)
+                                    @foreach ($allData as $key => $about)
 
                                         <tr>
                                             <td>{{ $key+1 }}</td>
-                                            <td>{{ $contact->address }}</td>
-                                            <td>{{ $contact->mobile_no }}</td>
-                                            <td>{{ $contact->email }}</td>
-                                            <td>{{ $contact->facebook }}</td>
-                                            <td>{{ $contact->twitter }}</td>
-                                            <td>{{ $contact->youtube }}</td>
-                                            <td>{{ $contact->google_plus }}</td>
+                                            <td>{{ $about->description }}</td>
 
                                             <td>
-                                                <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('contacts.edit', $contact->id)}}">
+                                                <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('abouts.edit', $about->id)}}">
                                                     <i class="fa fa-edit">
 
                                                     </i>
                                                 </a>
-                                                <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('contacts.delete', $contact->id) }}">
+                                                <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('abouts.delete', $about->id) }}">
                                                     <i class="fa fa-trash">
 
                                                     </i>
