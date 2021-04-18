@@ -104,3 +104,15 @@ Route::prefix('news_events')->group(function(){
     Route::get('/delete/{id}', 'Backend\NewsEventController@delete')->name('news_events.delete');
     
 });
+
+Route::prefix('services')->group(function(){
+
+    Route::get('/view', 'Backend\ServiceController@view')->name('services.view');
+    Route::get('/add', 'Backend\ServiceController@add')->name('services.add');
+    Route::post('/store', 'Backend\ServiceController@store')->name('services.store');
+    
+    Route::get('/edit/{id}', 'Backend\ServiceController@edit')->name('services.edit');
+    Route::post('/update/{id}', 'Backend\ServiceController@update')->name('services.update');
+    Route::get('/delete/{id}', 'Backend\ServiceController@delete')->name('services.delete');
+    
+});
