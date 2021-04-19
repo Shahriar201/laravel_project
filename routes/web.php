@@ -18,6 +18,7 @@
 Route::get('/', 'Frontend\FrontendController@index');
 Route::get('about-us', 'Frontend\FrontendController@aboutUs')->name('about.us');
 Route::get('contact-us', 'Frontend\FrontendController@contactUs')->name('contact.us');
+Route::get('/news-events/details/{id}', 'Frontend\FrontendController@newsDetails')->name('news.event.details');
 
 Auth::routes();
 
