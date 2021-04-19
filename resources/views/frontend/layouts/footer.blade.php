@@ -3,16 +3,16 @@
         <div class="row">
             <div class="col-md-8">
                 <h4 style="color: white">Contact Us</h4>
-                <p style="color: white">Address: Notun bazar,Gulshan-Dhaka, Mobile: 01928511049, Email: asadullahkpi@gmail.com</p>
+                <p style="color: white">Address:{{ $contact->address }}, Mobile: {{ $contact->mobile_no }}, Email: {{ $contact->email }}</p>
             </div>
             <div class="col-md-4">
                 <h4 style="color: white">Follow Us</h4>
                 <div class="social">
                     <ul>
-                        <li><a href="https://www.facebook.com/popularsoftbd/?modal=admin_todo_tour" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter-square"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCiO1LbMZH6E4vSEoaqS5erA/playlists" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
-                        <li><a href=""><i class="fa fa-google-plus-square"></i></a></li>
+                        <li><a href="{{ $contact->facebook }}" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="{{ $contact->twitter }}" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a href="{{ $contact->youtube }}" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
+                        <li><a href="{{ $contact->google_plus }}" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
                     </ul>
                 </div>
             </div>
