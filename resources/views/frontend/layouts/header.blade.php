@@ -10,11 +10,11 @@
                         <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">About Us</a>
                         <div class="dropdown-menu" style="background: #BADDFB;">
                             <a href="{{ route('about.us') }}" class="dropdown-item">About Us</a>
-                            <a href="" class="dropdown-item">Mission</a>
-                            <a href="" class="dropdown-item">Vision</a>
+                            <a href="{{ route('our.mission') }}" class="dropdown-item">Mission</a>
+                            <a href="{{ route('our.vision') }}" class="dropdown-item">Vision</a>
                         </div>
                     </div>
-                    <a href="" class="nav-item nav-link">News and Event</a>
+                    <a href="{{ route('our.news.events') }}" class="nav-item nav-link">News and Event</a>
                     <a href="{{ route('contact.us') }}" class="nav-item nav-link">Contact Us</a>
                     <a href="" class="nav-item nav-link">Login</a>
                 </div>
