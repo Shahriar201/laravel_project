@@ -184,8 +184,14 @@
                         <i class="far fa-circle nav-icon"></i>
                         <p>View Contact</p>
                     </a>
-                </li>
-                
+                </li>     
+
+                <li class="nav-item">
+                    <a href="{{ route('contacts.communicate') }}" class="nav-link {{ ($route=='contacts.communicate')?'active':'' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View Communicate</p>
+                    </a>
+                </li>     
             </ul>
         </li>
 
