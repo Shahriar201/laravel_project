@@ -19,7 +19,7 @@ class CreateCommunicatesTable extends Migration
             $table->string('email');
             $table->string('mobile_no');
             $table->string('address');
-            $table->longText('message');
+            $table->longText('msg');
             $table->timestamps();
         });
     }

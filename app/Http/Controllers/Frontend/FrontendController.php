@@ -84,7 +84,7 @@ class FrontendController extends Controller
         $contact->email = $request->email;
         $contact->mobile_no = $request->mobile_no;
         $contact->address = $request->address;
-        $contact->message = $request->message;
+        $contact->msg = $request->msg;
         $contact->save();
 
         $data = array(
@@ -92,13 +92,13 @@ class FrontendController extends Controller
             'email' => $request->email,
             'mobile_no' => $request->mobile_no,
             'address' => $request->address,
-            'message' => $request->message,
+            'msg' => $request->msg
         );
 
         Mail::send('frontend.emails.contact', $data, function($message) use($data){
-            $message->from('sagar@gmail.com', 'Response Mail');
+            $message->from('sagarbd767@gmail.com', 'Response Mail');
             $message->to($data['email']);
-            $message->subject('Thanks for contact us');
+            $message->subject('Thanks for contract us');
         });
 
         return redirect()->back()->with('success', 'Your message successfully sent');

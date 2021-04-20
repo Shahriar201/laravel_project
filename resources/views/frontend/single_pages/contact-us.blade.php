@@ -43,8 +43,8 @@
 								<input type="text" name="address" id="address" class="form-control" placeholder="Write Your Address" required>
 							</div>
 							<div class="form-group col-md-12">
-								<label for="message">Message <span style="color: red;font-weight: bold;">*</span></label>
-								<textarea name="message" class="form-control" id="message" placeholder="Write Your Message" rows="5" required></textarea>
+								<label for="msg">Message <span style="color: red;font-weight: bold;">*</span></label>
+								<textarea name="msg" class="form-control" id="msg" placeholder="Write Your Message" rows="5" required></textarea>
 							</div>
 							<div class="form-group col-md-6">
 								<button type="submit" class="btn btn-primary">Send Message</button>
