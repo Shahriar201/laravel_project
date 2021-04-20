@@ -12,6 +12,8 @@ use App\Model\Vision;
 use App\Model\NewsEvent;
 use App\Model\Service;
 use App\Model\About;
+use App\Model\Communicate;
+use Mail;
 
 class FrontendController extends Controller
 {
@@ -73,5 +75,32 @@ class FrontendController extends Controller
         $data['news_events'] = NewsEvent::orderBy('id', 'desc')->get();
 
         return view('frontend.single_pages.news-events', $data);
+    }
+
+    public function store(Request $request){
+        $contact = new Communicate();
+
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->mobile_no = $request->mobile_no;
+        $contact->address = $request->address;
+        $contact->message = $request->message;
+        $contact->save();
+
+        $data = array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile_no' => $request->mobile_no,
+            'address' => $request->address,
+            'message' => $request->message,
+        );
+
+        Mail::send('frontend.emails.contact', $data, function($message) use($data){
+            $message->from('sagar@gmail.com', 'Response Mail');
+            $message->to($data['email']);
+            $message->subject('Thanks for contact us');
+        });
+
+        return redirect()->back()->with('success', 'Your message successfully sent');
     }
 }

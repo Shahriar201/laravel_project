@@ -97,19 +97,17 @@
 					<form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        {{-- @if($errors->any())
+                        @if($errors->any())
 
-                        <div class="alert alert-alert alert-dismissible">
+                        <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
                             @foreach ($errors->all as $error)
                                 <strong>{{$error}}</strong><br/>
                             @endforeach
                             
                         </div>
-                        @endif --}}
+                        @endif
             
-                        
-                        
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>

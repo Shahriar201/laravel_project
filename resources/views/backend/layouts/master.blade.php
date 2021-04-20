@@ -151,7 +151,7 @@
 
         @yield('content')
 
-        {{-- Javascript updated notification alert --}}
+        {{-- Javascript data updated notification alert --}}
         @if (session()->has('success'))
             <script type="text/javascript">
                 $(function(){

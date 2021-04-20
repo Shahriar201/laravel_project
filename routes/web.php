@@ -22,6 +22,7 @@ Route::get('/news-events/details/{id}', 'Frontend\FrontendController@newsDetails
 Route::get('/our/mission', 'Frontend\FrontendController@mission')->name('our.mission');
 Route::get('/our/vision', 'Frontend\FrontendController@vision')->name('our.vision');
 Route::get('/news/events', 'Frontend\FrontendController@newsEvents')->name('our.news.events');
+Route::post('/contact/store', 'Frontend\FrontendController@store')->name('contact.store');
 
 Auth::routes();
 
