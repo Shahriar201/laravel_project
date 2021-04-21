@@ -64,7 +64,7 @@
                                     <tr>
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ date('d-m-Y', strtotime($news->date)) }}</td>
-                                        <td><img src="{{ (!empty($news->image))?url('upload/news_images/'.$news->image):url('upload/no_image.jpg') }}" width="120px" height="130px"></td>
+                                        <td><img src="{{ (!empty($news->image))?url('public/upload/news_images/'.$news->image):url('public/upload/no_image.jpg') }}" width="120px" height="130px"></td>
                                         <td>{{ $news->short_title }}</td>
                                         <td>{{ $news->long_title }}</td>
 

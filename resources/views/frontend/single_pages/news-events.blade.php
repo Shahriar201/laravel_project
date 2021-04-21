@@ -3,7 +3,7 @@
 
     <!-- Banner Section -->
 	<section class="banner_part">
-		<img src="{{ asset ('frontend/image/banner.jpg')}}" style="width: 100%">
+		<img src="{{ asset ('public/frontend/image/banner.jpg')}}" style="width: 100%">
 	</section>
 
 	<!-- News and Events -->
@@ -30,7 +30,7 @@
 								<tr>
 									<td>{{ $key+1 }}</td>
 									<td width="15%">{{ date('d-m-Y', strtotime($news->date)) }}</td>
-									<td><img src="{{ asset ('upload/news_images/'.$news->image)}}" style="width: 200px; height: 120px;"></td>
+									<td><img src="{{ asset ('public/upload/news_images/'.$news->image)}}" style="width: 200px; height: 120px;"></td>
 									<td>{{ $news->short_title }}</td>
 									<td><a href="{{ route('news.event.details', $news->id) }}" class="btn btn-info">Details</a></td>
 								</tr>

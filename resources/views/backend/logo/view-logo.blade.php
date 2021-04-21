@@ -63,7 +63,7 @@
 
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="{{ (!empty($logo->image))?url('upload/logo_images/'.$logo->image):url('upload/no_image.jpg') }}" width="120px" height="130px"></td>
+                                        <td><img src="{{ (!empty($logo->image))?url('public/upload/logo_images/'.$logo->image):url('public/upload/no_image.jpg') }}" width="120px" height="130px"></td>
                 
                                         <td>
                                             <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('logos.edit', $logo->id)}}">

@@ -68,7 +68,7 @@
                                 </div>
 
                                <div class="form-group col-md-2">
-                                    <img id="showImage" src="{{ (!empty($editData->image))?url('upload/slider_images/'.$editData->image):url('upload/no_image.jpg') }}"
+                                    <img id="showImage" src="{{ (!empty($editData->image))?url('public/upload/slider_images/'.$editData->image):url('public/upload/no_image.jpg') }}"
                                      style="width: 150px; height: 160px; border: 1px solid #000;">
                                 </div>
 

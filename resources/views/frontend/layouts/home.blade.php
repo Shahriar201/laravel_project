@@ -17,12 +17,12 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<img src="{{ asset ('upload/mission_images/'.$mission->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
+					<img src="{{ asset ('public/upload/mission_images/'.$mission->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
 					<p style="text-align: justify;"><strong>Mission </strong>{{ $mission->title }}</p>
 				</div>
 				
 				<div class="col-md-6">
-					<img src="{{ asset ('upload/vision_images/'.$vision->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
+					<img src="{{ asset ('public/upload/vision_images/'.$vision->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
 					<p style="text-align: justify;"><strong>Vision </strong>{{ $vision->title }}</p>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 								<tr>
 									<td>{{ $key+1 }}</td>
 									<td width="15%">{{ date('d-m-Y', strtotime($news->date)) }}</td>
-									<td><img src="{{ asset ('upload/news_images/'.$news->image)}}" style="width: 200px; height: 120px;"></td>
+									<td><img src="{{ asset ('public/upload/news_images/'.$news->image)}}" style="width: 200px; height: 120px;"></td>
 									<td>{{ $news->short_title }}</td>
 									<td><a href="{{ route('news.event.details', $news->id) }}" class="btn btn-info">Details</a></td>
 								</tr>

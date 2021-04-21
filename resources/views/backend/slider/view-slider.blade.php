@@ -62,7 +62,7 @@
 
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="{{ (!empty($slider->image))?url('upload/slider_images/'.$slider->image):url('upload/no_image.jpg') }}" width="120px" height="130px"></td>
+                                        <td><img src="{{ (!empty($slider->image))?url('public/upload/slider_images/'.$slider->image):url('public/upload/no_image.jpg') }}" width="120px" height="130px"></td>
                                         <td>{{ $slider->short_title }}</td>
                                         <td>{{ $slider->long_title }}</td>
 

@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Laravel Project</title>
-	<link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset ('frontend/css/customize.css')}}">
+	<link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('public/frontend/css/customize.css')}}">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="gotoup">
-					<img src="{{ asset ('frontend/image/scrl.jpg')}}" style="width: 40px; height: 40px;">
+					<img src="{{ asset ('public/frontend/image/scrl.jpg')}}" style="width: 40px; height: 40px;">
 				</div>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 			});
 		});
 	</script>
-	<script src="{{ asset ('frontend/js/popper.min.js')}}"></script>
-	<script src="{{ asset ('frontend/js/bootstrap.min.js')}}"></script>
+	<script src="{{ asset ('public/frontend/js/popper.min.js')}}"></script>
+	<script src="{{ asset ('public/frontend/js/bootstrap.min.js')}}"></script>
 </body>
 </html>

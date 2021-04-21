@@ -3,7 +3,7 @@
 
     <!-- Banner Section -->
 	<section class="banner_part">
-		<img src="{{ asset ('frontend/image/banner.jpg')}}" style="width: 100%">
+		<img src="{{ asset ('public/frontend/image/banner.jpg')}}" style="width: 100%">
 	</section>
 
 	<!-- Contact us Section -->

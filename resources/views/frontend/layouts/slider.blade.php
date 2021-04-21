@@ -19,7 +19,7 @@
           @foreach($sliders as $slider)
             <!-- Slide One - Set the background image for this slide in the line below -->
 
-            <div class="carousel-item @if($count == 0) { active } @endif" style="background-image: url({{ asset('upload/slider_images/'.$slider->image) }})">
+            <div class="carousel-item @if($count == 0) { active } @endif" style="background-image: url({{ asset('public/upload/slider_images/'.$slider->image) }})">
               <div class="carousel-caption d-none d-md-block">
                 <h2 class="display-4">{{ $slider->short_title }}</h2>
                 <p class="lead">{{ $slider->long_title }}</p>

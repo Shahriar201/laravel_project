@@ -66,7 +66,7 @@
 
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="{{ (!empty($vision->image))?url('upload/vision_images/'.$vision->image):url('upload/no_image.jpg') }}" width="120px" height="130px"></td>
+                                        <td><img src="{{ (!empty($vision->image))?url('public/upload/vision_images/'.$vision->image):url('public/upload/no_image.jpg') }}" width="120px" height="130px"></td>
                                         <td>{{ $vision->title }}</td>
         
                                         <td>

@@ -66,7 +66,7 @@
 
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="{{ (!empty($mission->image))?url('upload/mission_images/'.$mission->image):url('upload/no_image.jpg') }}" width="120px" height="130px"></td>
+                                        <td><img src="{{ (!empty($mission->image))?url('public/upload/mission_images/'.$mission->image):url('public/upload/no_image.jpg') }}" width="120px" height="130px"></td>
                                         <td>{{ $mission->title }}</td>
         
                                         <td>

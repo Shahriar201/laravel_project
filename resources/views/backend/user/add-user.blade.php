@@ -63,8 +63,8 @@
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control">
                                     <font style="color:red">
-                                        {{($errors->has('name'))?($errors->first('name')):''}}
-                                    </font>
+                                      {{($errors->has('name'))?($errors->first('name')):''}}
+                                  </font>
                                 </div>
                     
                                 <div class="form-group col-md-4">
